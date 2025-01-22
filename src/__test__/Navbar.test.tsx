@@ -1,11 +1,10 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import '@testing-library/jest-dom';
+import { render, screen, fireEvent } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import "@testing-library/jest-dom";
 
-describe('Navbar Component', () => {
-  test('renders Navbar with links', () => {
+describe("Navbar Component", () => {
+  test("renders Navbar with links", () => {
     render(
       <Router>
         <Navbar />
@@ -17,14 +16,14 @@ describe('Navbar Component', () => {
     expect(screen.getByText(/contact/i)).toBeInTheDocument();
   });
 
-  test('toggles menu on mobile', () => {
+  test("toggles menu on mobile", () => {
     render(
       <Router>
         <Navbar />
       </Router>
     );
 
-    const toggleButton = screen.getByRole('button', {
+    const toggleButton = screen.getByRole("button", {
       name: /open main menu/i,
     });
     fireEvent.click(toggleButton);
